@@ -1,0 +1,83 @@
+{% extends "VoitureFrontOfficeBundle::layout.html.twig" %}
+
+    {% block content %}
+
+            <div class="col-md-9">
+
+                <div class="row">
+
+                    {% for annonce in annonces %}
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="../images/{{ annonce.model }}.jpg" alt="{{ annonce.model }}" style="height:160px;">
+                            <div class="caption">
+                                <h4>Modèle : <a href="{{ path('voiture_front_office_oneAnnonce',{id:annonce.id})}}">{{ annonce.model }} </a></h4>
+                                <h4 class="pull-left">Prix : {{ annonce.price }} E</h4><br>
+                                
+                                 <h5 class="pull-left"><a href="{{ path('voiture_front_office_brand',{slug:annonce.brand.slug}) }}"> Toutes les occasions de {{ annonce.brand.name }} :</a></h5> 
+                            </div>
+                            
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-4 col-lg-12 col-md-12">
+                        <h3>Sélectionnez votre véhicule de moins de :</h3>
+                                    {{ form(formKm) }}<br>
+                        
+                    </div><br><br>
+
+                     <div class="col-sm-4 col-lg-12 col-md-12">
+                        <h3>Sélectionnez votre véhicule mis en service avant le :</h3>
+                                    {{ form(formFirstAcquire) }}<br>
+                        
+                    </div><br><br>
+
+                    <div class="col-sm-4 col-lg-12 col-md-12">
+                        <h3>Sélectionnez les annonces par prix : </h3>
+                                    {{ form(formPrice) }}<br>
+                        
+                    </div><br><br>
+
+                     <div class="col-sm-4 col-lg-12 col-md-12">
+                        <h3>Sélectionnez les annonces par date de parution : </h3>
+                                    {{ form(formDateCreated) }}<br>
+                        
+                    </div><br><br>
+
+
+                    <div class="col-sm-4 col-lg-12 col-md-12">
+                        <h3>Garage partenaire du mois : {{ garage.name }}
+                        </h3>
+                        <p>Tous les mois, un garage selectionné pour être partenaire privilégié de Voiture.com <a href="{{ path('voiture_front_office_garage',{id:garage.id})}}">{{ garage.name }}</a> vous présente ses meilleures affaires en occasion !</p>
+                        <a class="btn btn-primary" target="_blank" href="{{ path('voiture_front_office_garages') }}" style="text-align:center;margin-left:291px;">Voir la liste des garages partenaires :</a>
+                    </div><br><br>
+
+
+                     {% if is_granted('ROLE_USER') %} 
+
+                         <div class="col-sm-12 col-lg-12 col-md-12">
+                            <h3>Déposez votre annonce :</h3><br><br>
+                                    {{ form(form) }}
+                         </div>
+                     {% else %} 
+                        <p>Vous souhaitez déposer une annonce ? Connectez-vous gratuitement :</p>
+                        <a href="{{ path ('voiture_users_office_connection') }}" class="btn btn-default">Connectez-vous </a>
+
+                     {% endif %}
+                </div><br><br>
+
+                        <div class="col-sm-12 col-lg-12 col-md-12">
+                                {{ render(controller('VoitureUsersBundle:Users:createUser')) }} 
+                        </div>
+
+            </div>
+
+       
+    <!-- /.container -->
+
+    {% endblock %}

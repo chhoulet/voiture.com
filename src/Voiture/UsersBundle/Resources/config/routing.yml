@@ -1,0 +1,22 @@
+# Accès à la vérification:route vide, sanscontroler, car Symfony gere le processus  d'authentification
+voiture_users_login_check:
+    path: /connectionUser/check
+
+# Accès au formulaire de connection:
+voiture_users_office_connection:
+    path: /connectionUser
+    defaults: { _controller:VoitureUsersBundle:Users:connectionUser}
+
+# Deconnexion: idem que pour login-check
+voiture_users_logout:
+    path: /connectionUser/logout
+
+# Création d'un User dans la BDD:
+voiture_users_creationUser:
+    path: /createUser
+    defaults: { _controller:VoitureUsersBundle:Users:createUser}
+
+# Vue de tous les users :
+voiture_users_showUsers:
+    path: /showUsers 
+    defaults: { _controller:VoitureUsersBundle:Users:showUsers}

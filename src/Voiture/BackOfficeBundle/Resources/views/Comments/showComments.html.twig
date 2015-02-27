@@ -1,0 +1,20 @@
+{% extends 'VoitureBackOfficeBundle::layout.html.twig' %}
+
+	{% block content %}
+
+		<div class="col-md-9">
+			{% for com in comments %}
+
+				{{ com.username }}<br>
+				{{ com.theme }}<br>
+				{{ com.content }}<br>
+				{{ com.dateCreated | date('d-m-Y H:i:s') }}<br><br>
+
+				<a href="{{ path('voiture_back_office_comment',{id:com.id}) }}" class="btn btn-primary">Editer ce commentaire</a><br><br>
+
+				<a href="{{ path('voiture_back_office_suppComments',{id:com.id}) }}" class='btn btn-primary'>Supprimer ce commmentaire</a><br><br>
+
+			{% endfor %}
+		</div>
+
+	{% endblock %}

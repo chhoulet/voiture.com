@@ -1,0 +1,6 @@
+{% for region in regions %}
+	<ul>
+		<a href="{{ path('voiture_front_office_regions',{slug:region.slug}) }}"><li>{{ region.name }}</li></a>
+	</ul>
+{% endfor %}
+

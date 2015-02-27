@@ -1,0 +1,104 @@
+# Page d'accueil :
+voiture_front_office_homepage:
+    path :  /
+    defaults: { _controller:VoitureFrontOfficeBundle:Accueil:homepage}
+
+# Static :
+voiture_front_office_conditions_generales:
+    path:  /Conditions
+    defaults: { _controller:VoitureFrontOfficeBundle:Static:conditions }
+
+voiture_front_office_mentions_legales:
+    path:  /Mentions
+    defaults: { _controller:VoitureFrontOfficeBundle:Static:mentions}
+
+voitureFrontOfficeBundle_contact:
+    path: /Contact
+    defaults: { _controller:VoitureFrontOfficeBundle:Static:contact}
+
+# Liste de toutes les annonces / Suppression :
+voiture_front_office_showAnnonces:
+    path: /showAnnonces
+    defaults: { _controller:VoitureFrontOfficeBundle:Annonces:showAnnonces}
+
+voiture_front_office_supAnnonce:
+    path: /suppAnnonce/{id}
+    defaults: { _controller:VoitureFrontOfficeBundle:Annonces:suppAnnonce}
+    requirements:
+        id: "[0-9]+"
+
+# Alimentation du layout :
+voiture_front_office_layout:
+    path: /regions
+    defaults: { _controller:VoitureFrontOfficeBundle:Layout:regions}
+
+voiture_front_office_layout:
+    path: /categories
+    defaults: { _controller:VoitureFrontOfficeBundle:Layout:categories}
+
+# Annonces par marques :
+voiture_front_office_brand:
+    path: /marques/{slug}
+    defaults: { _controller:VoitureFrontOfficeBundle:Annonces:showAnnoncesByBrand}
+    requirements:
+        slug:  "[a-zA-Z0-9]+"
+
+voiture_front_office_oneAnnonce:
+    path: /annonce/{id}
+    defaults: { _controller:VoitureFrontOfficeBundle:Annonces:showOneAnnonce}
+    requirements:
+        id: "[0-9]+"
+
+# Annonces par catégories :
+voiture_front_office_categories:      
+    path:  /categories/{slug}
+    defaults: { _controller:VoitureFrontOfficeBundle:Annonces:showAnnoncesByCategories}
+    requirements:
+        slug:  "[a-zA-Z0-9]+"
+
+# Annonces par Régions :
+voiture_front_office_regions:
+    path:  /regions/{slug}
+    defaults: { _controller:VoitureFrontOfficeBundle:Annonces:showAnnoncesByRegions}
+    requirements:
+        slug:  "[a-zA-Z0-9_]+"
+
+# Annonces par nombre de kilomètres :
+voiture_front_office_smallKilometers:
+    path: /smallKilometers 
+    defaults: { _controller:VoitureFrontOfficeBundle:Annonces:smallKilometers}
+
+# Annonces par Modèles :
+voiture_front_office_showCar:
+    path: /showCars 
+    defaults: { _controller:VoitureFrontOfficeBundle:Car:showCars}
+
+voiture_front_office_oneCar:
+    path: /oneCar/{id}
+    defaults: { _controller:VoitureFrontOfficeBundle:Car:oneCar}
+
+voiture_front_office_createCar:
+    path: /createCar 
+    defaults: { _controller:VoitureFrontOfficeBundle:Car:createCar}
+
+# Gestion des Garages :
+voiture_front_office_garages:
+    path: /showGarages
+    defaults: { _controller:VoitureFrontOfficeBundle:Garages:showGarages}
+
+voiture_front_office_garage:
+    path: /showOneGarage/{id}
+    defaults: { _controller:VoitureFrontOfficeBundle:Garages:showOneGarage}
+
+#Gestion des commentaires:
+voiture_front_office_comments:
+    path:  /createComments/{idAnnonce}
+    defaults: { _controller:VoitureFrontOfficeBundle:Comments:createComments}
+    requirements:
+        id: "[0-9]+"
+
+
+voiture_front_office_afficheComments:
+    path:  /afficheComments/{annonce_id}
+    defaults: { _controller:VoitureFrontOfficeBundle:Comments:afficheComments}
+

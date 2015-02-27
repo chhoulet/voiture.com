@@ -1,0 +1,5 @@
+{% for categ in categories %}
+	<ul>
+		<a href="{{ path('voiture_front_office_categories',{slug:categ.slug}) }}"><li>{{ categ.name }}</li></a>
+	</ul>	
+{% endfor %}

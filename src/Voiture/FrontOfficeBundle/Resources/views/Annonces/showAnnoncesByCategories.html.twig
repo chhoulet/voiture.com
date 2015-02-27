@@ -1,0 +1,40 @@
+{% extends 'VoitureFrontOfficeBundle::layout.html.twig' %}
+
+	{% block content %}
+
+		 <!-- Title -->
+        <div class="row">
+            <div class="col-lg-8">
+                <h3> {{ showIdCategoriesBySlug.name }} :</h3>
+
+
+       {% for categorie in showIdCategoriesBySlug %}
+                <div class="list-group">
+                 	  <a href="{{ path('voiture_front_office_categories',{slug:categorie.slug})}}"class="list-group-item">{{categorie.name}}</a>
+                </div>
+        {% endfor %}<br><br>   
+
+
+        {% for annonce in showAnnoncesByCategories %}
+             <img src="../../images/{{ annonce.model }}.jpg" alt="{{ annonce.model }}" style="height:160px;" /><br>
+        		<ul>
+        			<li>Auteur : {{ annonce.username}}<br></li>
+
+        			<li>Date de parution de l'annonce : {{ annonce.dateCreated | date('d-m-Y H:i:s') }}<br></li>
+
+					<li>Marque : {{ annonce.brand}}<br></li>
+
+					<li>Modèle : {{ annonce.model }}<br></li>
+					
+					<li>Prix :   {{ annonce.price }} €</li><br>
+				</ul>
+
+					<a href="{{ path('voiture_front_office_oneAnnonce',{id:annonce.id}) }}" class="btn btn-primary">Détails de l'annonce :</a><br><br>
+
+        {% endfor %}<br>
+       
+			</div>
+        </div>
+        <!-- /.row -->
+
+	{% endblock %}

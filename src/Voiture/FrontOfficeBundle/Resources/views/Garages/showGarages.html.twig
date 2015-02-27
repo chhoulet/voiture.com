@@ -1,0 +1,13 @@
+{% extends 'VoitureFrontOfficeBundle::layout.html.twig' %}
+
+	{% block content %}
+
+		<h3>Liste des garages partenaires :</h3>
+			{% for garage in garages %}
+				<a href="{{ path('voiture_front_office_garage',{id:garage.id}) }}">{{ garage.name }}</a><br>
+				{{ garage.ville }}<br>
+				{{ garage.adress }}<br>
+				{{ garage.brand }}<br>
+			{% endfor %}
+
+	{% endblock %}	

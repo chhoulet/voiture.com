@@ -1,0 +1,56 @@
+{% extends 'VoitureFrontOfficeBundle::layout.html.twig' %}
+
+	{% block content %}
+
+
+            <div class="col-md-9">
+
+                <div class="thumbnail">
+                     <img src="../../images/{{ oneAnnonce.model }}.jpg" alt="{{ oneAnnonce.model }}">
+                    <div class="caption-full">
+                        <h4 class="pull-left"> {{ oneAnnonce.brand }}</h4>
+                        <h4 class="pull-right"> {{ oneAnnonce.model }}</h4><br><br>
+                      
+                        
+                            <p><strong>Cette annonce vous intéresse  ? <a href="#">Envoyer un email à son auteur !</a>
+                            </strong></p>
+                        <p>{{ oneAnnonce.content }}</p><br>
+                        <p>Annonce publiée le : {{ oneAnnonce.dateCreated | date('d-m-Y H:i:s') }}</p><br>
+                    </div>
+                
+
+	            <hr>
+
+	            <div class="row">
+
+	            	<div class="col-md-3">
+	            		<h4 class="pull-left">Motorisation : {{ oneAnnonce.engine }}</h4><br><br>
+	            	</div>
+	            	<div class="col-md-3">
+	            		<h4>Kilométrage : {{ oneAnnonce.kilometers }}</h4><br><br>
+	            	</div>
+	            	<div class="col-md-3">
+	            		<h4>Date de mise en circulation : {{ oneAnnonce.dateFirstAcquire | date('d-m-Y') }}</h4><br><br>
+	            	</div>
+	            	<div class="col-md-3">
+	            		<h4 class="pull-left">Prix : {{oneAnnonce.price}} €</h4><br><br>
+	            	</div>
+
+	            </div>	
+
+	            </div>
+
+	            <div class="row">
+
+	            	{{ render(controller('VoitureFrontOfficeBundle:Comments:createComments',{idAnnonce:oneAnnonce.id})) }} 
+
+	            </div><br><br>
+
+	            <div class="row">
+
+	            	{{ render(controller('VoitureFrontOfficeBundle:Comments:afficheComments',{annonce_id:oneAnnonce.id})) }}<br><br>
+
+	            </div>
+
+      
+	{% endblock %}	

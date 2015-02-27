@@ -1,0 +1,13 @@
+voiture_users:
+    resource: "@VoitureUsersBundle/Resources/config/routing.yml"
+    prefix:   /
+
+voiture_back_office:
+    resource: "@VoitureBackOfficeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+voiture_front_office:
+    resource: "@VoitureFrontOfficeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

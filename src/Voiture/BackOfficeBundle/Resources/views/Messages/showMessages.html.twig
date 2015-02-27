@@ -1,0 +1,23 @@
+{% extends 'VoitureBackOfficeBundle::layout.html.twig' %}
+	
+	{% block content %}
+
+		<div class="col-md-9">
+		
+			<h3>Liste des messages</h3>
+
+				{% for message in messages %}
+
+					{{ message.username }}<br>
+					{{ message.sujet }}<br>
+					{{ message.content }}<br>
+					{{ message.dateCreated |date('d-m-Y H:i:s') }}<br>
+					{{ message.email }}<br><br>
+
+				<a href="{{ path('voiture_back_office_suppMessages',{id:message.id}) }}" class="btn btn-primary">Supprimer ce message</a><br><br>
+
+				{% endfor %}
+				
+		</div>
+
+	{% endblock %}

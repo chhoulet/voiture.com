@@ -1,0 +1,19 @@
+{% extends 'VoitureBackOfficeBundle::layout.html.twig' %}
+
+	{% block content %}
+
+		<div class="col-md-9">
+
+			<h3>Liste des catégories proposées :</h3>
+
+				{% for categorie in categories %}
+					<a href="{{ path('voiture_back_office_editionCategorie',{id:categorie.id})}}">{{categorie.name }}</a><br><br>
+
+					<a href="{{path('voiture_back_office_editionCategorie',{id:categorie.id })}}" class="btn btn-primary">Editer cette catégorie</a><br><br>
+
+					<a href="{{ path('voiture_back_office_suppCategories',{id:categorie.id}) }}" class="btn btn-primary">Supprimer cette catégorie</a><br>
+				{% endfor %}
+				
+		</div>
+
+	{% endblock %}

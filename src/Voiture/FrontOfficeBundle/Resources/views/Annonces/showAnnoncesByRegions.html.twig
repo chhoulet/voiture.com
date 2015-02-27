@@ -1,0 +1,30 @@
+{% extends 'VoitureFrontOfficeBundle::layout.html.twig' %}
+
+	{% block content %}
+
+		<div class="col-md-9">
+
+			<h3>Liste des annonces disponibles dans la région : {{ regionBySlug.name }}</h3><br><br>
+
+				{% for annonce in annoncesByRegion %}
+					<img src="../../images/{{ annonce.model }}.jpg" alt="{{ annonce.model }}" style="height:160px;" /><br>
+					
+					<ul>
+						<li>Auteur : {{ annonce.username}}<br></li>
+
+						<li>Modèle : {{ annonce.dateCreated | date('d-m-Y H:i:s') }}<br></li>
+
+						<li>Marque : {{ annonce.brand}}<br></li>
+
+						<li>Modèle : {{ annonce.model }}<br></li>
+
+						<li>Prix : {{ annonce.price }} €<br></li>
+				 	</ul>	
+
+					<a href="{{ path('voiture_front_office_oneAnnonce',{id:annonce.id}) }}" class="btn btn-primary">Détails :</a><br><br>
+
+				{% endfor %}
+
+		</div>
+
+	{% endblock %}

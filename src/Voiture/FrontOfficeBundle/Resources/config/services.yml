@@ -1,0 +1,4 @@
+services:
+    voiture_front_office.services.mail:
+        class: Voiture\FrontOfficeBundle\Services\MailService
+        arguments: [ @mailer ]

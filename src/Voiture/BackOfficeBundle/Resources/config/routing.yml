@@ -1,0 +1,89 @@
+voiture_back_office_homepage:
+    path:     /homepage
+    defaults: { _controller: VoitureBackOfficeBundle:Homepage:homePage }
+
+# Création / Edition d'une marque / Vue / Suppression(brand):
+voiture_back_office_creationBrand:
+    path:  /creationBrand
+    defaults: { _controller:VoitureBackOfficeBundle:Brand:creationBrand}
+
+voiture_back_office_editionBrand:
+    path: /editionBrand/{id}
+    defaults: { _controller:VoitureBackOfficeBundle:Brand:editionBrand}
+
+voiture_back_office_showBrand:
+    path: /showBrand  
+    defaults: { _controller:VoitureBackOfficeBundle:Brand:showBrand}
+
+voiture_back_office_suppBrand:
+    path: /suppBrand/{id}
+    defaults: { _controller:VoitureBackOfficeBundle:Brand:suppBrand}
+
+# Création / Edition / Vue / Suppression d'une catégorie:
+voiture_back_office_creationCategorie:
+    path: /creationCategorie 
+    defaults: { _controller:VoitureBackOfficeBundle:Categorie:creationCategorie}
+
+voiture_back_office_editionCategorie:
+    path: /editionCategorie/{id}
+    defaults: { _controller:VoitureBackOfficeBundle:Categorie:editionCategorie}
+
+voiture_back_office_showCategories:
+    path:  /showCategories
+    defaults: { _controller:VoitureBackOfficeBundle:Categorie:showCategories}
+
+voiture_back_office_suppCategories:
+    path: /suppCategories/{id}
+    defaults: { _controller:VoitureBackOfficeBundle:Categorie:suppCategories}
+
+# Edition d'un commentaire / Vues / Suppression:
+voiture_back_office_comment:
+    path: /editionCommentaire/{id}
+    defaults: { _controller:VoitureBackOfficeBundle:Comments:editionCommentaire}
+
+voiture_back_office_showComments:
+    path: /showComments 
+    defaults: { _controller:VoitureBackOfficeBundle:Comments:showComments}
+
+voiture_back_office_suppComments:
+    path: /suppComments{id}
+    defaults: { _controller:VoitureBackOfficeBundle:Comments:suppComments}
+
+# Création / Edition d'un garage /Suppression
+voiture_back_office_creationGarage:
+    path: /creationGarage 
+    defaults: { _controller:VoitureBackOfficeBundle:Garages:creationGarage}
+
+voiture_back_office_editionGarage:
+    path: /editionGarage/{id} 
+    defaults: { _controller:VoitureBackOfficeBundle:Garages:editionGarage}
+
+voiture_back_office_suppGarage:
+    path: /suppGarage/{id}
+    defaults: { _controller:VoitureBackOfficeBundle:Garages:suppGarage}
+
+# Vue / Suppression des messages_users:
+voiture_back_office_messages:
+    path: /showMessages
+    defaults: { _controller: VoitureBackOfficeBundle:Messages:showMessages}
+
+voiture_back_office_suppMessages:
+    path: /suppressionMessages/{id}
+    defaults: { _controller:VoitureBackOfficeBundle:Messages:suppressionMessages}
+
+# Création / Edition d'une région / Vue / Suppression:
+voiture_back_office_creationRegions:
+    path: /creationRegion
+    defaults: { _controller:VoitureBackOfficeBundle:Regions:creationRegion}
+
+voiture_back_office_editionRegions:
+    path: /editionRegion/{id}
+    defaults: { _controller:VoitureBackOfficeBundle:Regions:editionRegion}
+
+voiture_back_office_showRegions:
+    path:  /showRegions 
+    defaults: { _controller:VoitureBackOfficeBundle:Regions:showRegions}
+
+voiture_back_office_suppRegion:
+    path: /suppRegion/{id} 
+    defaults: { _controller:VoitureBackOfficeBundle:Regions:suppRegion}

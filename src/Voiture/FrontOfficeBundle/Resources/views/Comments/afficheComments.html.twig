@@ -1,0 +1,13 @@
+<h3>Derniers commentaires déposés :</h3>
+
+	{% for com in afficheComments %}
+
+		Username : {{ com.username }}<br><br>
+
+		Thème : {{ com.theme }}<br><br>
+
+		Contenu : {{ com.content }}<br><br>
+
+		Date de création : {{ com.dateCreated | date('d-m-Y H:i:s') }}<br><br>
+
+	{% endfor %}
