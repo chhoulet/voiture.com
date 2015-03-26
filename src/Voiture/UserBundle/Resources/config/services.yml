@@ -1,4 +1,4 @@
 services:
-#    voiture_users.example:
-#        class: Voiture\UsersBundle\Example
+#    voiture_user.example:
+#        class: Voiture\UserBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]

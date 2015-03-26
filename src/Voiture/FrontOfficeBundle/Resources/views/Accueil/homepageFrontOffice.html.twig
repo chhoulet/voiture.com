@@ -66,15 +66,12 @@
                          </div>
                      {% else %} 
                         <p>Vous souhaitez déposer une annonce ? Connectez-vous gratuitement :</p>
-                        <a href="{{ path ('voiture_users_office_connection') }}" class="btn btn-default">Connectez-vous </a>
+                        <a href="{{ path ('fos_user_register') }}" class="btn btn-default">Connectez-vous </a>
 
                      {% endif %}
                 </div><br><br>
 
-                        <div class="col-sm-12 col-lg-12 col-md-12">
-                                {{ render(controller('VoitureUsersBundle:Users:createUser')) }} 
-                        </div>
-
+                       
             </div>
 
        

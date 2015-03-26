@@ -24,7 +24,7 @@ class AccueilController extends Controller
 
 		//Formulaire de choix des annonces par kilométrage :
 		$formKm = $this -> createForm(new KilometersType());
-		//Soumisson des données du formulaire :
+		//Soumission des données du formulaire :
 		$formKm -> handleRequest($request);
 
 		if($formKm -> isValid()){
@@ -61,6 +61,18 @@ class AccueilController extends Controller
 		}
 
 
+		//Création du formulaire de tri des annonces par date de parution:
+		$formDateCreated = $this -> createForm(new DateCreatedType()); 
+		$formDateCreated -> handleRequest($request);
+
+		if($formDateCreated -> isValid()){
+			$dataDateCreated = $formDateCreated -> getData();
+			$dateCreated = $em -> getRepository('VoitureFrontOfficeBundle:Annonces')->triParDate($dataDateCreated['dateCreated']);
+
+			return $this->render('VoitureFrontOfficeBundle:Annonces:showAnnonces.html.twig', array('showAnnonces'=>$dateCreated));
+
+		}
+		
 
 		//Création du formulaire de dépôt d'annonce :
 		$annonce = new Annonces();
@@ -75,18 +87,6 @@ class AccueilController extends Controller
 
 			$this->get('session')->getFlashBag()->add('succes','Votre annonce a bien été créée !');
 			return $this -> redirect($this ->generateUrl('voiture_front_office_homepage'));
-		}
-
-		//Création du formulaire de tri des annonces par date de parution:
-		$formDateCreated = $this -> createForm(new DateCreatedType()); 
-		$formDateCreated -> handleRequest($request);
-
-		if($formDateCreated -> isValid()){
-			$dataDateCreated = $formDateCreated -> getData();
-			$dateCreated = $em -> getRepository('VoitureFrontOfficeBundle:Annonces')->triParDate($dataDateCreated['dateCreated']);
-
-			return $this->render('VoitureFrontOfficeBundle:Annonces:showAnnonces.html.twig', array('showAnnonces'=>$dateCreated));
-
 		}
 
 		return $this -> render('VoitureFrontOfficeBundle:Accueil:homepageFrontOffice.html.twig', array(

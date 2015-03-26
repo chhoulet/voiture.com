@@ -96,8 +96,7 @@ voiture_front_office_comments:
     defaults: { _controller:VoitureFrontOfficeBundle:Comments:createComments}
     requirements:
         id: "[0-9]+"
-
-
+        
 voiture_front_office_afficheComments:
     path:  /afficheComments/{annonce_id}
     defaults: { _controller:VoitureFrontOfficeBundle:Comments:afficheComments}
