@@ -24,7 +24,7 @@ class AnnoncesType extends AbstractType
             ->add('content', 'textarea',       array('label'=>'Entrez le texte de l\'annonce :',
                                                      'attr' => array('class' => 'form-control',
                                                                      'placeholder' => 'Annonce')))
-            ->add('brand', null,              array('label'=>'Marque du véhicule :',
+            ->add('brand', null,               array('label'=>'Marque du véhicule :',
                                                      'attr' => array('class' => 'form-control',
                                                                      'placeholder' => 'Marque')))
             ->add('model', 'text',             array('label'=>'Modèle du véhicule :',
@@ -48,8 +48,8 @@ class AnnoncesType extends AbstractType
             ->add('region', null,              array('label'=>'Quelle est la région de mise en vente :',
                                                      'attr'=> array('class'=>'form-control',
                                                                     'placeholder'=>'Région')))
-            ->add('Valider','submit', array('attr'=> array('class'=>'btn btn-primary',
-                                                            'style'=>'margin-top:25px;margin-left:380px;'
+            ->add('Valider','submit',          array('attr'=> array('class'=>'btn btn-primary',
+                                                                    'style'=>'margin-top:25px;margin-left:380px;'
                                                            )))
         ;
     }

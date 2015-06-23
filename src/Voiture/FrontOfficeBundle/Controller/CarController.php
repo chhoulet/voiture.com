@@ -22,7 +22,7 @@ class CarController extends Controller
 		$em = $this -> getDoctrine()->getManager();
 		$oneCar = $em ->getRepository('VoitureFrontOfficeBundle:Car')->find($id);
 
-		return $this -> render('VoitureFrontOfficeBundle:Car:oneCar.html.twig',array('oneCar'=>$oneCar));
+		return $this -> render('VoitureFrontOfficeBundle:Car:oneCar.html.twig', array('oneCar'=>$oneCar));
 	}
 
 	public function createCarAction(Request $request)

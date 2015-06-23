@@ -16,13 +16,13 @@ class CategoriesType extends AbstractType
     {
         $builder
             ->add('name','text',        array('label'=>'Ajoutez une catégorie :',
-                                             'attr' => array('class'=>'form-control',
-                                                             'placeholder'=>'Catégorie')))
-            ->add('slug','text',       array('label'=>'',
-                                             'attr' => array('class'=>'form-control',
+                                              'attr' => array('class'=>'form-control',
+                                                              'placeholder'=>'Catégorie')))
+            ->add('slug','text',        array('label'=>'',
+                                              'attr' => array('class'=>'form-control',
                                                              'placeholder'=>'Slug')))
            
-            ->add('Valider','submit',  array('attr'=> array('class'=>'btn btn-primary',
+            ->add('Valider','submit',   array('attr'=> array('class'=>'btn btn-primary',
                                                             'style'=>'margin-top:25px;margin-left:380px;'
                                                            )))
         ;

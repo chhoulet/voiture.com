@@ -27,7 +27,7 @@ class CommentsController extends Controller
 			$em -> flush();
 
 			$this ->get('session')->getFlashBag()->add('succes','Votre commentaire a bien été ajouté !');
-			/*$this sert a appeller toutes les ppropriétés et functions de la classe et de celles de la clsse controller, ou il y a le get, getDoctrine, redirect etc...
+			/*$this sert a appeller toutes les propriétés et functions de la classe et de celles de la classe controller, ou il y a le get, getDoctrine, redirect etc...
 			on se sert du get pour appeller le service envoi de mail tel que l'on le définit dans l'onglet 'services.yml,
 			puis on utilise la fonction personnalisée créée par nous qui contient le corps du mail.*/
 			$this ->get('voiture_front_office.services.mail')->send($content);
